@@ -1,0 +1,17 @@
+[
+    {
+        "deflection": 0.12,
+        "load": 10.5,
+        "timestamp": "2025-03-12T10:15:30"
+    },
+    {
+        "deflection": 0.15,
+        "load": 11.0,
+        "timestamp": "2025-03-12T10:20:30"
+    },
+    {
+        "deflection": 0.18,
+        "load": 12.2,
+        "timestamp": "2025-03-12T10:25:30"
+    }
+]
