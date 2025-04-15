@@ -1,8 +1,19 @@
 from fastapi import FastAPI, HTTPException
 from .sensors import process_sensor_data, get_latest_sensor_data, get_all_sensor_data
 from .models import SensorData
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # You can replace "*" with your frontend's URL in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.get("/")
 async def root():
@@ -34,3 +45,6 @@ async def all_sensor_logs():
         return {"message": "All sensor logs", "logs": sensor_logs}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+#run
+#uvicorn app.main:app --reload
